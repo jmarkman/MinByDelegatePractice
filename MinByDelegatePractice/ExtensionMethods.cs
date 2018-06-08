@@ -8,13 +8,13 @@ namespace MinByDelegatePractice
 {
     public static class ExtensionMethods
     {
-        public static string MinBy(this string[] list, Func<string, int> lambda)
+        public static string MinBy<T>(this T[] list, Func<T, int> lambda)
         {
             if (list.Length == 0)
                 throw new Exception("The collection is empty, the operation cannot be completed.");
 
             var min = lambda(list[0]);
-            var result = string.Empty;
+            T result = default(T);
             foreach (var item in list)
             {
                 if (lambda(item) < min)
@@ -24,7 +24,7 @@ namespace MinByDelegatePractice
                 }
             }
 
-            return result;
+            return result.ToString();
         }
     }
 }
