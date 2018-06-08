@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,10 @@ namespace MinByDelegatePractice
          */ 
         static void Main(string[] args)
         {
+            var texts = new[] { "lol", "asdf", "h", "hello world" };
+            var shortTest = texts.MinBy(x => x.Length);
+
+            Console.WriteLine(shortTest);
         }
     }
 }
