@@ -20,13 +20,19 @@ namespace MinByDelegatePractice
          * 
          * Can ignore dupes and return the first, or return an IEnumerable<T>
          * Do whatever on an empty sequence, prefer to throw an exception
-         */ 
+         */
         static void Main(string[] args)
         {
             var texts = new[] { "lol", "asdf", "h", "hello world" };
+            var dogs = ExtensionMethods.GetDogs();
+            var nums = new[] { 90, 3, 5, 7, 44 };
+
             var shortTest = texts.MinBy(x => x.Length);
+            var youngestDog = dogs.MinBy(y => y.Age);
+            //var smallestNum = nums.MinBy();
 
             Console.WriteLine(shortTest);
+            Console.WriteLine(youngestDog.ToString());
         }
     }
 }
