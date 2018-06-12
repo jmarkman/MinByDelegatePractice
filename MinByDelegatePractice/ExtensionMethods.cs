@@ -8,14 +8,14 @@ namespace MinByDelegatePractice
 {
     public static class ExtensionMethods
     {
-        public static T MinBy<T>(this T[] list, Func<T, int> lambda)
+        public static T MinBy<T>(this IEnumerable<T> list, Func<T, int> lambda)
         {
             if (list is null)
                 throw new Exception("The list is null!");
-            else if (list.Length == 0)
-                throw new Exception("The collection is empty, the operation cannot be completed.");                
+            else if (list.Count() == 0)
+                throw new Exception("The collection is empty, the operation cannot be completed.");
 
-            var min = lambda(list[0]);
+            var min = lambda(list.First());
             T result = default(T);
             foreach (var item in list)
             {

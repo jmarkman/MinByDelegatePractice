@@ -23,18 +23,26 @@ namespace MinByDelegatePractice
          */
         static void Main(string[] args)
         {
-            var texts = new[] { "lol", "asdf", "h", "hello world" };
-            var dogs = ExtensionMethods.GetDogs();
+            //var texts = new[] { "lol", "asdf", "h", "hello world" };
+            //var dogs = ExtensionMethods.GetDogs();
 
-            var shortTest = texts.MinBy(x => x.Length);
-            var youngestDog = dogs.MinBy(y => y.Age);
+            //var shortTest = texts.MinBy(x => x.Length);
+            //var youngestDog = dogs.MinBy(y => y.Age);
 
-            var nums = new[] { 90, 3, 5, 7, 44 };
-            var smallestNum = nums.MinBy(x => x);
+            //var nums = new[] { 90, 3, 5, 7, 44 };
+            //var smallestNum = nums.MinBy(x => x);
 
-            Console.WriteLine(shortTest);
-            Console.WriteLine(youngestDog.ToString());
-            Console.WriteLine(smallestNum);
+            //Console.WriteLine(shortTest);
+            //Console.WriteLine(youngestDog.ToString());
+            //Console.WriteLine(smallestNum);
+
+            IEnumerable<string> strArray = new[] { "abc", "ab", "a" };
+            IEnumerable<string> strList = new List<string> { "abc", "ab", "a" };
+
+            var smallestArr = strArray.MinBy(x => x.Length);
+            var smallestList = strList.MinBy(x => x.Length);
+            Console.WriteLine(smallestArr);
+            Console.WriteLine(smallestList);
         }
     }
 }

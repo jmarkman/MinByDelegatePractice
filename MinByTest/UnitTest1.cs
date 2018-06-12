@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MinByDelegatePractice;
 
@@ -48,6 +50,16 @@ namespace MinByTest
             int[] nums = new[] { 90, 3, 5, 7, 44 };
             var smallestNum = nums.MinBy(x => x);
             Assert.AreEqual(3, smallestNum);
+        }
+
+        [TestMethod]
+        public void WorksWithIEnumerableCollections()
+        {
+            List<string> testList = new List<string> { "abcd", "abc", "ab", "a" };
+            string[] testArray = new string[] { "abcd", "abc", "ab", "a" };
+
+            Assert.AreEqual("a", testList.MinBy(x => x.Length));
+            Assert.AreEqual("a", testArray.MinBy(x => x.Length));
         }
     }
 }
