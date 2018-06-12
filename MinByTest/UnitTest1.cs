@@ -41,5 +41,13 @@ namespace MinByTest
             Dog[] dogs = ExtensionMethods.GetDogs();
             Assert.AreEqual("Bo", dogs.MinBy(x => x.Name.Length).Name);
         }
+
+        [TestMethod]
+        public void SmallestNumberIsReturned()
+        {
+            int[] nums = new[] { 90, 3, 5, 7, 44 };
+            var smallestNum = nums.MinBy(x => x);
+            Assert.AreEqual(3, smallestNum);
+        }
     }
 }

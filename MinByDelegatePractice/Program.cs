@@ -25,14 +25,16 @@ namespace MinByDelegatePractice
         {
             var texts = new[] { "lol", "asdf", "h", "hello world" };
             var dogs = ExtensionMethods.GetDogs();
-            var nums = new[] { 90, 3, 5, 7, 44 };
 
             var shortTest = texts.MinBy(x => x.Length);
             var youngestDog = dogs.MinBy(y => y.Age);
-            //var smallestNum = nums.MinBy();
+
+            var nums = new[] { 90, 3, 5, 7, 44 };
+            var smallestNum = nums.MinBy(x => x);
 
             Console.WriteLine(shortTest);
             Console.WriteLine(youngestDog.ToString());
+            Console.WriteLine(smallestNum);
         }
     }
 }
